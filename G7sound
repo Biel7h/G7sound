@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>G7Sound</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>🔊 G7Sound</h1>
+  <p>Som automotivo profissional</p>
+</header>
+
+<nav>
+  <a href="#produtos">Produtos</a>
+  <a href="#simulador">Simulador</a>
+  <a href="#projetos">Projetos</a>
+  <a href="#contato">Contato</a>
+</nav>
+
+<section id="banner">
+  <h2>Potência, Qualidade e Ajuste Fino 🚗💥</h2>
+</section>
+
+<section id="produtos">
+  <h2>Produtos</h2>
+
+  <div class="card">
+    <h3>Subwoofer 12"</h3>
+    <p>Grave forte e limpo</p>
+    <button onclick="comprar('Subwoofer 12')">Comprar</button>
+  </div>
+
+  <div class="card">
+    <h3>Módulo Amplificador</h3>
+    <p>Alta potência</p>
+    <button onclick="comprar('Módulo')">Comprar</button>
+  </div>
+
+</section>
+
+<section id="simulador">
+  <h2>Simulador de Impedância</h2>
+
+  <input type="number" id="falantes" placeholder="Qtd de falantes">
+  <input type="number" id="impedancia" placeholder="Ohms de cada">
+
+  <button onclick="calcular()">Calcular Paralelo</button>
+
+  <p id="resultado"></p>
+</section>
+
+<section id="projetos">
+  <h2>Projetos (Antes e Depois)</h2>
+
+  <div class="card">
+    <h3>Projeto Gol G5</h3>
+    <p>Antes: Som fraco</p>
+    <p>Depois: Grave forte e qualidade top</p>
+  </div>
+
+</section>
+
+<section id="contato">
+  <h2>Contato</h2>
+  <a class="btn" href="https://wa.me/5511979639561" target="_blank">
+    Falar no WhatsApp
+  </a>
+</section>
+
+<footer>
+  <p>© 2026 G7Sound</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>/g7sound
+ ├── index.html
+ ├── style.css
+ ├── script.js
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #000;
+  color: #fff;
+}
+
+header {
+  background: #111;
+  text-align: center;
+  padding: 20px;
+  border-bottom: 2px solid #444;
+}
+
+nav {
+  text-align: center;
+  padding: 10px;
+  background: #000;
+}
+
+nav a {
+  color: #fff;
+  margin: 10px;
+  text-decoration: none;
+}
+
+#banner {
+  padding: 60px;
+  text-align: center;
+  background: linear-gradient(black, #111);
+}
+
+section {
+  padding: 20px;
+}
+
+.card {
+  background: #111;
+  padding: 20px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #222;
+}
+
+button {
+  padding: 10px;
+  background: #00ff88;
+  border: none;
+  cursor: pointer;
+}
+
+.btn {
+  background: #25d366;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  border-radius: 8px;
+function comprar(produto) {
+  alert("Você será redirecionado para pagamento de: " + produto);
+
+  // LINK EXEMPLO MERCADO PAGO (você vai trocar depois)
+  window.open("https://mpago.la/SEULINKAQUI", "_blank");
+}
+
+function calcular() {
+  let falantes = document.getElementById("falantes").value;
+  let ohms = document.getElementById("impedancia").value;
+
+  let resultado = ohms / falantes;
+
+  document.getElementById("resultado").innerText =
+    "Impedância final: " + resultado.toFixed(2) + " Ohms";
+}
+}
